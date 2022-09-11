@@ -165,13 +165,6 @@ class VerticalWordsFragment : Fragment() {
 
         recyclerViewWord.adapter = adapter
         recyclerViewWord.layoutManager = layoutManager
-        val searcing = "https://www.google.com/search?q=apa+itu+"
-
-        adapter.onClick2 = {
-            var dataBtn = namaWord.text.toString()
-            var intent = Intent(Intent.ACTION_VIEW, Uri.parse(searcing+dataBtn))
-            startActivity(intent)
-        }
 
     }
 }

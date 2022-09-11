@@ -1,15 +1,16 @@
 package com.cowok.hijrah.challengechapter3
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.item_words.*
 
 class WordAdapter(val listWord: ArrayList<ListData>)
     : RecyclerView.Adapter<WordAdapter.ViewHolder>(){
-
-    var onClick2: ((ListData) -> Unit)? = null
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var namaWrd = itemView.findViewById<Button>(R.id.namaWord)
@@ -23,7 +24,10 @@ class WordAdapter(val listWord: ArrayList<ListData>)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.namaWrd.text = listWord[position].identitasBtn
         holder.namaWrd.setOnClickListener {
-            onClick2?.invoke(listWord[position])
+            val searcing = "https://www.google.com/search?q=apa+itu+"
+            var intent = Intent(Intent.ACTION_VIEW,
+                Uri.parse(searcing+listWord[position].identitasBtn))
+            it.context.startActivity(intent)
         }
     }
 

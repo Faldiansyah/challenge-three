@@ -1,5 +1,6 @@
 package com.cowok.hijrah.challengechapter3
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
             R.id.gridLayout -> {
+//                val intent = Intent(this, GridCharFragment::class.java)
+//                startActivity(intent)
                 Toast.makeText(this, "Enter Grid Layout", Toast.LENGTH_SHORT).show()
                 return true
             } else -> super.onOptionsItemSelected(item)

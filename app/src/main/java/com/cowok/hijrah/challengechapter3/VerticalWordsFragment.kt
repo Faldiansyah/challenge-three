@@ -155,8 +155,7 @@ class VerticalWordsFragment : Fragment() {
         )
 
         val searcing = "https://www.google.com/search?q=apa+itu+"
-        var getBtn = arguments?.getString("dataBtn")
-        Toast.makeText(context, getBtn, Toast.LENGTH_LONG).show()
+        var getBtn = arguments?.getSerializable("dataBtn")
 
         if (getBtn == "A"){
             val adapter = WordAdapter(listWordA)

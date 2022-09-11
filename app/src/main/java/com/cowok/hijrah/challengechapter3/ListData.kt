@@ -1,3 +1,5 @@
 package com.cowok.hijrah.challengechapter3
 
-data class ListData(var identitasBtn: String)
+import java.io.Serializable
+
+data class ListData(var identitasBtn: String) : Serializable

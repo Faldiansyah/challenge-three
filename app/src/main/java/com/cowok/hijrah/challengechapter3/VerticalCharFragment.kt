@@ -43,9 +43,8 @@ class VerticalCharFragment : Fragment() {
         recyclerViewChar.adapter = adapter
 
         adapter.onClick = {
-            var dataButton = namaButton.text.toString()
             var bund = Bundle()
-            bund.putString("dataBtn", dataButton)
+            bund.putSerializable("dataBtn", it)
 
             Navigation.findNavController(view)
                 .navigate(R.id.action_verticalCharFragment_to_verticalWordsFragment, bund)

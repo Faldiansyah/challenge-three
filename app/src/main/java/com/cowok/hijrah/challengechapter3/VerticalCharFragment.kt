@@ -38,7 +38,6 @@ class VerticalCharFragment : Fragment() {
 
         val adapter = ButtonAdapter(listChar)
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-
         recyclerViewChar.layoutManager = layoutManager
         recyclerViewChar.adapter = adapter
 

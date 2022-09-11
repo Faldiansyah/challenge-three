@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 class WordAdapter(val listWord: ArrayList<ListData>)
     : RecyclerView.Adapter<WordAdapter.ViewHolder>(){
 
+    var onClick2: ((ListData) -> Unit)? = null
+
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var namaWrd = itemView.findViewById<Button>(R.id.namaWord)
     }
@@ -20,6 +22,9 @@ class WordAdapter(val listWord: ArrayList<ListData>)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.namaWrd.text = listWord[position].identitasBtn
+        holder.namaWrd.setOnClickListener {
+            onClick2?.invoke(listWord[position])
+        }
     }
 
     override fun getItemCount(): Int {
